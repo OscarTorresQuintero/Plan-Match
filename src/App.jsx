@@ -1,20 +1,13 @@
-import { useState } from "react";
-import PlacesList from "./components/PlacesList";
+import React, { useState } from "react";
 import PlaceDetail from "./components/placeDetail/PlaceDetail";
+import lugares from "./data/lugares";
 
 function App() {
-  const [selectedPlace, setSelectedPlace] = useState(null);
+  const [selectedPlace, setSelectedPlace] = useState(lugares[0]); // por ejemplo
 
   return (
-    <div className="app-container">
-      {selectedPlace ? (
-        <PlaceDetail 
-          place={selectedPlace} 
-          onBack={() => setSelectedPlace(null)} 
-        />
-      ) : (
-        <PlacesList onSelectPlace={setSelectedPlace} />
-      )}
+    <div className="App">
+      <PlaceDetail place={selectedPlace} />
     </div>
   );
 }
