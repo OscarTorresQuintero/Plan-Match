@@ -77,7 +77,8 @@ Módulo: Itinerario / Plan Final (ItineraryBuilder)
 Componentes:
 - ItineraryCard.jsx
 - DaySelector.jsx
-##Objetivos Principales
+- 
+## Objetivos Principales
 - Crear una plataforma web turística completa.
 - Ofrecer galería de lugares y vista detallada.
 - Implementar diseño moderno, limpio y responsivo.
