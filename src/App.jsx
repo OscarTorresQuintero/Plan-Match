@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import './App.css'
+import ItineraryPage from "./modulos/itinerario/itinerario.jsx";
 
-
-useState
+export default function App() {
+  return <ItineraryPage />;
+}
