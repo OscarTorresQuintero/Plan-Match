@@ -1,27 +1,25 @@
-import InfoSection from "./InfoSection";
+import React from "react";
 import ImageGallery from "./ImageGallery";
+import InfoSection from "./InfoSection";
 
-function PlaceDetail({ place, onBack }) {
+const PlaceDetail = ({ place }) => {
+  if (!place) return <p>No se encontró el lugar.</p>;
+
   return (
-    <div className="p-4">
-      <button onClick={onBack} className="mb-4 bg-gray-200 px-3 py-1 rounded">
-        ← Volver
-      </button>
-
-      <h1 className="text-2xl font-bold mb-4">{place.nombre}</h1>
-
-      <ImageGallery imagen={place.imagen} />
-
+    <div className="place-detail p-4 max-w-4xl mx-auto">
+      <h1 className="text-2xl font-bold mb-4">{place.name}</h1>
+      <ImageGallery images={place.images} />
       <InfoSection
-        descripcion={place.descripcion}
+        name={place.name}
+        price={place.price}
+        distance={place.distance}
         rating={place.rating}
-        precio={place.precio}
-        horario={place.horario}
-        plan={place.plan}
+        description={place.description}
+        hours={place.hours}
       />
     </div>
   );
-}
+};
 
 export default PlaceDetail;
 
