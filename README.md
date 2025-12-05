@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Aporte individual:
+=======
+# Aporte Angie Carrillo:
+>>>>>>> ad48bf0e6a0bdc355ef9bf7ad4ee32eac6dc5232
 
 -Este documento describe mi aporte individual al proyecto integrador del módulo de React.
 Mi responsabilidad principal dentro del equipo es desarrollar el sistema de Autenticación, incluyendo:
