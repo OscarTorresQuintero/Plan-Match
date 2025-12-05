@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const ImageGallery = ({ images }) => {
   const [selected, setSelected] = useState(0);
 
-  if (!images || images.length === 0) return <p>No hay imágenes.</p>;
+  if (!images || images.length === 0) return <p>No hay imágenes disponibles.</p>;
 
   return (
     <div className="image-gallery mb-4">
@@ -12,7 +12,7 @@ const ImageGallery = ({ images }) => {
         alt={`Imagen ${selected + 1}`}
         className="w-full h-64 object-cover rounded"
       />
-      <div className="flex mt-2 space-x-2">
+      <div className="flex mt-2 space-x-2 overflow-x-auto">
         {images.map((img, idx) => (
           <img
             key={idx}
