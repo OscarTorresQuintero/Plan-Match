@@ -6,14 +6,14 @@ import { filtrarLugares } from "../service/Filtros.jsx";
 export default function QuestionFlow() {
   const preguntas = [
     {
-      key: "presupuesto",
+      key: "precioCOP",
       pregunta: "¿Cuál es tu presupuesto máximo?",
-      opciones: [100, 300, 500, 800, 1200]
+      opciones: ['100k COP', '300k COP', '500k COP', '800k COP', '1200k COP']
     },
     {
       key: "distancia",
       pregunta: "¿Qué distancia máxima quieres viajar?",
-      opciones: [100, 500, 1000, 5000, 15000]
+      opciones: ['100km', '500km', '1000km', '5000km', '15000km']
     },
     {
       key: "tipo",
@@ -24,7 +24,69 @@ export default function QuestionFlow() {
       key: "personas",
       pregunta: "¿Para cuántas personas es el viaje?",
       opciones: [1, 2, 3, 4, 5]
-    }
+    },
+    {
+
+      key: "rating",
+      pregunta: "¿Cuál es tu calificación mínima que desea ver?",
+      opciones: [1, 2, 3, 4, 5]
+
+    },
+    {
+      key: "tipoActividad",
+      pregunta: "¿Qué tipo de actividad prefieres?",
+      opciones: ["relajación", "aventura", "cultura", "exploración"]
+    },
+
+
+    {
+      key: "categoria",
+      pregunta: "¿Qué categoría de lugar te gustaría visitar?",
+      opciones: ["playa", "montaña", "ciudad", "histórico"]
+    },
+
+
+    {
+      key: "clima",
+      pregunta: "¿Qué clima prefieres?",
+      opciones: ["cálido", "frío", "templado"]
+    },
+
+
+    {
+      key: "presupuesto",
+      pregunta: "¿Cuál es tu presupuesto aproximado?",
+      opciones: ["bajo", "medio", "alto"]
+    },
+
+
+    {
+      key: "tiempoVisita",
+      pregunta: "¿Cuánto tiempo planeas quedarte?",
+      opciones: ["corto", "medio", "largo"]
+    },
+
+
+    {
+      key: "accesibilidad",
+      pregunta: "¿Qué nivel de accesibilidad necesitas?",
+      opciones: ["baja", "media", "alta"]
+    },
+
+
+    {
+      key: "mejorEpoca",
+      pregunta: "¿En qué época del año deseas viajar?",
+      opciones: [
+        "enero - marzo",
+        "abril - junio",
+        "julio - septiembre",
+        "octubre - diciembre"
+      ]
+    },
+
+
+
   ];
 
   const [paso, setPaso] = useState(0);
