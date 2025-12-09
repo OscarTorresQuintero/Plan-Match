@@ -1,16 +1,48 @@
-//DOCUMENTAR Y ACTUALIZAR
+//Autor: Angie Maritza Carrillo Fuquene
+//Ficha: 3293689
+//Fecha actualizacion: 08/12/2025
+//Descripcion: Pagina principal que muestra la bienvenida al usuario
+// autenticado y permite cerrar sesión.
 
-export default function Home({ user, onLogout }) {
+// Dependencias necesarias para la pagina principal
+//UseEffect para cargar los datos del usuario al montar el componente
+//UseState para manejar el estado del usuario
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+// Componente principal de la pagina de inicio
+const Home = () => {
+  const navigate = useNavigate();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const data = localStorage.getItem("user");
+    if (data) {
+      setUser(JSON.parse(data));
+    } else {
+      navigate("/login");
+    }
+  }, [navigate]);
+
+  const logout = () => {
+    localStorage.removeItem("user");
+    navigate("/login");
+  };
+
+  if (!user) return null;
+
   return (
-    <div className="h-screen flex flex-col justify-center items-center bg-gray-100">
-      <h1 className="text-3xl font-bold mb-4">Bienvenido, {user.name} 👋</h1>
+    <div className="p-8 text-center">
+      <h1 className="text-2xl font-bold mb-4">Bienvenido, {user.name}</h1>
 
       <button
-        onClick={onLogout}
-        className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700"
+        onClick={logout}
+        className="bg-red-500 text-white px-4 py-2 rounded"
       >
-        Cerrar Sesión
+        Cerrar sesión
       </button>
     </div>
   );
-}
+};
+
+export default Home;

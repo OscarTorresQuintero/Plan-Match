@@ -1,35 +1,31 @@
-import { useState } from 'react'
-import './App.css'
+//Autor: Angie Maritza Carrillo Fuquene
+//Ficha: 3293689
+//Fecha actualizacion: 08/12/2025
+//Descripcion: Componente principal de la aplicacion que maneja las rutas entre paginas.
 
-
-useState
-//DOCUMENTAR Y ACTUALIZAR
-
-import { useState, useEffect } from "react";
-import Login from "./PROYECTS/Plan-Match-Angie-Carrillo/src/pages/Login";
-import Register from "./PROYECTS/Plan-Match-Angie-Carrillo/src/pages/Register";
+// Dependencias necesarias para la navegacion entre paginas
+//Routes y Route para definir las rutas de la aplicacion
+//importa los componentes de las paginas
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Login from "./Pages/Login";
+import Register from "./Pages/Register";
+import ForgotPassword from "./Pages/ForgotPassword";
 import Home from "./Pages/Home";
 
-export default function App() {
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    const savedUser = localStorage.getItem("user");
-    if (savedUser) setUser(JSON.parse(savedUser));
-  }, []);
-
-  const handleLogout = () => {
-    localStorage.removeItem("user");
-    setUser(null);
-    window.location.href = "/";
-  };
-
-  if (!user) {
-    if (window.location.pathname === "/register") {
-      return <Register />;
-    }
-    return <Login onLogin={setUser} />;
-  }
-
-  return <Home user={user} onLogout={handleLogout} />;
+// Componente principal de la aplicacion
+function App() {
+  return (
+    //Aqui definimos las rutas de la aplicacion
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/home" element={<Home />} />
+    </Routes>
+  );
 }
+
+// Exportar el componente App como predeterminado
+export default App;

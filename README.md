@@ -1,8 +1,7 @@
-<<<<<<< HEAD
+# Actualizado el 09/12/2025
+
 # Aporte individual:
-=======
-# Aporte Angie Carrillo:
->>>>>>> ad48bf0e6a0bdc355ef9bf7ad4ee32eac6dc5232
+
 
 -Este documento describe mi aporte individual al proyecto integrador del módulo de React.
 Mi responsabilidad principal dentro del equipo es desarrollar el sistema de Autenticación, incluyendo:
@@ -30,3 +29,75 @@ Este módulo permite que el usuario:
 -Acceda a una pantalla privada después del login
 -Cierre sesión
 
+# Estructura del proyecto
+
+PLAN-MATCH-CLONE/
+│
+├── public/
+│   └── vite.svg
+│
+├── src/
+│   ├── assets/
+│   │   ├── react.svg
+│   │   ├── IMAGENES         
+│   │   
+│   │
+│   ├── components/
+│   │   └── FormInput          <--- componentes reutilizables
+│   │
+│   ├── pages/
+│   │   ├── ForgotPassword.jsx
+│   │   ├── Home.jsx
+│   │   ├── Login.jsx
+│   │   └── Register.jsx
+|   |
+|   |
+│   |── services/
+|   |   └──Api.js
+|   |
+|   |
+|   |
+│   ├── App.jsx
+│   ├── index.jsx
+│   └── main.css
+│
+├── package-lock.json
+├── tailwind.config.js
+├── postcss.config.js
+├── package.json
+└── README.md
+└── vite.config.js
+
+# Paginas incluidas
+
+-Login – Inicio de sesión
+-Register – Crear cuenta
+-ForgotPassword – Recuperación de contraseña
+-Home – Página principal
+
+
+# Para q sirven el componente
+
+ FormInput.jsx (reutilizable)
+
+-Componente que simplifica inputs repetidos en formularios.
+-Recibe props: label, type, value, onChange, placeholder.
+-Mantiene el código limpio en Login, Registro y ForgotPassword.
+
+# Para q sirven las pages
+
+- # Login.jsx
+
+Página para que el usuario acceda. Usa FormInput y muestra el logo.
+
+- # Register.jsx
+
+Página para registrar una nueva cuenta.
+
+- # ForgotPassword.jsx
+
+Formulario para recuperar la contraseña.
+
+- # Home.jsx
+
+Pantalla principal básica.

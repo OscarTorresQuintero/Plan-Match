@@ -1,16 +1,27 @@
-export const API_URL = "https://6932294111a8738467d1ad93.mockapi.io/api/v1/Plan";
+//Autor: Angie Maritza Carrillo Fuquene
+//Ficha: 3293689
+//Fecha actualizacion: 08/12/2025
+//Descripcion: Servicio API para manejar las solicitudes relacionadas con los usuarios.
 
-//DOCUMENTAR Y ACTUALIZAR
-export const registerUser = async (data) => {
-  const res = await fetch(API_URL, {
+// URL base de la API
+const API_URL = "https://6932294111a8738467d1ad93.mockapi.io/api/v1/Plan";
+
+// Función para registrar un nuevo usuario
+export const registerUser = async (userData) => {
+  const response = await fetch(API_URL, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userData),
   });
-  return await res.json();
+  // Retornar la respuesta en formato JSON
+  return response.json();
 };
 
-export const getUserByEmail = async (email) => {
-  const res = await fetch(`${API_URL}?email=${email}`);
-  return await res.json();
+// Función para obtener todos los usuarios
+export const getUsers = async () => {
+  const response = await fetch(API_URL);
+  return response.json();
 };
+
