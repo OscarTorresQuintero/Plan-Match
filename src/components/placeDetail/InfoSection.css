@@ -1,0 +1,249 @@
+.info-section {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  max-width: 800px;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.info-section:hover {
+  box-shadow: 0 25px 70px rgba(102, 126, 234, 0.25);
+  transform: translateY(-5px);
+}
+
+.info-header {
+  margin-bottom: 30px;
+}
+
+.info-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.info-divider {
+  height: 4px;
+  width: 60px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  margin-top: 15px;
+  border-radius: 2px;
+}
+
+.info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgba(102, 126, 234, 0.1);
+  animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.info-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.info-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.info-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.info-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #555;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.info-value {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.price-item {
+  background: linear-gradient(135deg, rgba(39, 174, 96, 0.05), rgba(39, 174, 96, 0.02));
+  padding: 20px !important;
+  border-radius: 12px;
+  border: none !important;
+  border-left: 4px solid #27ae60 !important;
+}
+
+.price-value {
+  font-size: 2rem;
+  color: #27ae60;
+  font-weight: 900;
+}
+
+.rating-item {
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.05), rgba(255, 193, 7, 0.02));
+  padding: 20px !important;
+  border-radius: 12px;
+  border: none !important;
+  border-left: 4px solid #ffc107 !important;
+}
+
+.stars-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.stars {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 4px rgba(255, 193, 7, 0.3);
+}
+
+.rating-text {
+  color: #666;
+  font-size: 1rem;
+}
+
+.description-item {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+  padding: 25px !important;
+  border-radius: 12px;
+  border: none !important;
+  border-left: 4px solid #667eea !important;
+  margin: 10px 0;
+}
+
+.info-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  margin: 0;
+  font-weight: 500;
+}
+
+.action-button {
+  width: 100%;
+  padding: 18px 30px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  animation: buttonSlide 0.6s ease-out 0.5s backwards;
+}
+
+@keyframes buttonSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.action-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(102, 126, 234, 0.6);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.action-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .info-section {
+    padding: 30px 20px;
+    border-radius: 15px;
+  }
+
+  .info-title {
+    font-size: 2rem;
+  }
+
+  .info-value {
+    font-size: 1.2rem;
+  }
+
+  .price-value {
+    font-size: 1.7rem;
+  }
+
+  .info-content {
+    gap: 20px;
+  }
+
+  .info-item {
+    padding-bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .info-section {
+    padding: 20px 15px;
+  }
+
+  .info-title {
+    font-size: 1.5rem;
+  }
+
+  .info-label {
+    font-size: 0.85rem;
+  }
+
+  .info-value {
+    font-size: 1.1rem;
+  }
+
+  .price-value {
+    font-size: 1.5rem;
+  }
+
+  .action-button {
+    padding: 15px 20px;
+    font-size: 0.95rem;
+  }
+
+  .stars {
+    font-size: 1.2rem;
+  }
+}
