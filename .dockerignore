@@ -1,0 +1,12 @@
+node_modules
+dist
+.git
+.env
+.env.local
+*.log
+Dockerfile
+nginx.conf
+server/
+coverage
+npm-debug.log*
+yarn-error.log*
